@@ -1,0 +1,78 @@
+:root{
+  --spotify-green: #1DB954;
+  --spotify-dark: #121212;
+  --spotify-muted: #b3b3b3;
+}
+
+* { box-sizing: border-box; }
+
+body{
+  background: linear-gradient(180deg, var(--spotify-dark) 0%, #0b0b0b 100%);
+  color: #fff;
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  padding: 1rem;
+}
+
+/* container card */
+.app-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+/* Header */
+.app-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 0.5rem 0;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+}
+.brand .logo{
+  width:48px; height:48px; border-radius:8px; background: var(--spotify-green);
+  display:flex; align-items:center; justify-content:center; font-weight:700; color: #000;
+  font-size:18px;
+}
+
+/* form controls */
+.form-control, .btn {
+  border-radius: 8px;
+}
+
+.btn-spotify {
+  background: var(--spotify-green);
+  border: none;
+  color: #000;
+  font-weight: 600;
+}
+
+.btn-spotify-outline {
+  color: var(--spotify-green);
+  border: 1px solid rgba(29,185,84,0.18);
+  background: transparent;
+}
+
+/* song card */
+.song-card {
+  display:flex;
+  gap: 12px;
+  align-items:center;
+  padding: 12px;
+  border-radius: 10px;
+  transition: transform .12s ease, box-shadow .12s ease;
+  background: rgba(255,255,255,0.02);
+}
+.song-card:hover { transform: translateY(-4px); box-shadow: 0 6px 24px rgba(0,0,0,0.6); }
+.song-art { width:64px; height:64px; border-radius:8px; object-fit:cover; }
+
+/* small screens */
+@media (max-width: 576px) {
+  .brand .logo { width:40px; height:40px; font-size:16px; }
+  .song-art { width:56px; height:56px; }
+}
